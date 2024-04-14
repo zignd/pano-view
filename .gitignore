@@ -1,0 +1,4 @@
+.venv
+moviepy
+*.mp4
+*.mp3
