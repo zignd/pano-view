@@ -13,16 +13,23 @@ def concatenate_webcams(output_file):
 
     # Get properties from the webcams
     width1 = int(cap1.get(cv2.CAP_PROP_FRAME_WIDTH))
+    print('>>> width1', width1)
     height1 = int(cap1.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    print('>>> height1', height1)
     width2 = int(cap2.get(cv2.CAP_PROP_FRAME_WIDTH))
+    print('>>> width2', width2)
     height2 = int(cap2.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    print('>>> height2', height2)
     fps1 = cap1.get(cv2.CAP_PROP_FPS)
     fps2 = cap2.get(cv2.CAP_PROP_FPS)
 
     # Use the minimum height for both videos to keep a uniform size
     min_height = min(height1, height2)
+    print('>>> min_height', min_height)
     new_width1 = int(width1 * (min_height / height1))
+    print('>>> new_width1', new_width1)
     new_width2 = int(width2 * (min_height / height2))
+    print('>>> new_width2', new_width2)
 
     # Total width is the sum of adjusted widths plus separator width
     separator_width = 10  # Width of the red line separator

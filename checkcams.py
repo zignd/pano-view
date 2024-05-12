@@ -1,16 +1,21 @@
 import cv2
 
 def test_cameras():
-    index = 2
+    index = 0
+    i = 0
     arr = []
     while True:
+        i += 1
+        if i > 10:
+            break
         cap = cv2.VideoCapture(index)
         if not cap.read()[0]:
-            break
+            index += 1
+            continue
         else:
             arr.append(index)
+            index += 1
             cap.release()
-        index += 1
     return arr
 
 available_cameras = test_cameras()
