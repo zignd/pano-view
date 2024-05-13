@@ -5,7 +5,7 @@ def concatenate_webcams(output_file):
     # Open the first webcam
     cap1 = cv2.VideoCapture(0)  # Device ID for the first webcam
     # Open the second webcam
-    cap2 = cv2.VideoCapture(2)  # Device ID for the second webcam
+    cap2 = cv2.VideoCapture(4)  # Device ID for the second webcam
     
     if not cap1.isOpened() or not cap2.isOpened():
         print("Failed to open one or both webcams")
